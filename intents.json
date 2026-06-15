@@ -1,0 +1,46 @@
+{
+  "intents": [
+    {
+        "tag": "greeting",
+        "patterns": [
+            "hi",
+            "hello",
+            "hey"
+        ],
+        "responses": [
+            "Hello! How can I assist you today?"
+        ]
+    },
+    {
+      "tag": "task",
+      "patterns": [
+        "what's my task today",
+        "today's task"
+      ],
+      "responses": [
+        "Your task today is to know about the chatbot."
+      ]
+    },
+    {
+      "tag": "mentor",
+      "patterns": [
+        "who is my mentor",
+        "mentor details"
+      ],
+      "responses": [
+        "Your mentor is Parvathy."
+      ]
+    }
+    {
+        "tag": "Domain",
+        "patterns": [
+            "bye",
+            "goodbye",
+            "see you later"
+        ],
+        "responses": [
+            "Goodbye! Have a great day!"
+        ]
+    }
+  ]
+}

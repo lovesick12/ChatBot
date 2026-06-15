@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TrackBot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>TrackBot 🤖</h2>
+
+    <div id="chat-box"></div>
+
+    <input type="text" id="user-input">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+function sendMessage(){
+
+    let message =
+    document.getElementById("user-input").value;
+
+    fetch("/chat",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify({
+            message:message
+        })
+    })
+
+    .then(response=>response.json())
+
+    .then(data=>{
+
+        document.getElementById("chat-box").innerHTML +=
+        "<p><b>You:</b> "+message+"</p>";
+
+        document.getElementById("chat-box").innerHTML +=
+        "<p><b>Bot:</b> "+data.response+"</p>";
+    });
+}
+</script>
+
+</body>
+</html>
